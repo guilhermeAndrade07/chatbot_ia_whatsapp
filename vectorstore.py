@@ -32,8 +32,8 @@ def get_vectorstore():
     docs = load_documents()
     if docs:
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=3000,
-            chunk_overlap=300,
+            chunk_size=1000,
+            chunk_overlap=100,
         )
         splits = text_splitter.split_documents(docs)
         return Chroma.from_documents(
