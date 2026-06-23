@@ -260,18 +260,6 @@ Os arquivos processados são movidos automaticamente para `./rag_files/processed
 
 ---
 
-## Pontos de Atenção / Melhorias Futuras
-
-1. **Segurança do `.env`** — chave Gemini e apikey da Evolution em texto plano; considerar Docker secrets ou vault.
-2. **Tamanho de chunk 3000** é alto para `gemini-embedding-2`; avaliar `chunk_size` 500–1000 com overlap proporcional.
-3. **Reindexação a cada request** — `get_vectorstore()` recria embeddings quando há documentos novos; ideal é um job único de ingestão.
-4. **Validação do webhook** é mínima — considerar validar assinatura/secret da Evolution.
-5. **Logs estruturados** (atualmente `print`); integrar com OpenTelemetry já presente nas dependências.
-6. **Tratamento de erros** em `send_whatsapp_message` (sem retry, sem checagem de status HTTP).
-7. **Encoding do `.env`** — normalizar valores para evitar aspas literais.
-
----
-
 ## Licença
 
 Defina a licença do projeto conforme a estratégia do repositório (MIT, Apache-2.0, proprietária etc.).
